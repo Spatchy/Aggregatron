@@ -1,0 +1,20 @@
+{
+  "parser": "@typescript-eslint/parser",
+  "plugins": [
+    "@typescript-eslint"
+  ],
+  "extends": [
+    "eslint:recommended",
+    "plugin:@typescript-eslint/eslint-recommended",
+    "plugin:@typescript-eslint/recommended"
+  ],
+  "rules": {
+    "quotes": ["error", "double"], // Always use double quotes
+    "semi": ["error", "never"],    // Never use semicolons
+    "object-curly-spacing": ["error", "always"], // Require spaces in object brackets
+    "array-bracket-spacing": ["error", "always"], // Require spaces in array brackets
+    "space-in-parens": ["error", "allow"], // Require spaces in parentheses
+    "comma-dangle": ["error", "never"],
+    "no-console": "warn"
+  }
+}
