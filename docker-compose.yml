@@ -1,4 +1,4 @@
-version: '3'
+version: '3.9'
 
 services:
   aggregatron-db:
@@ -13,7 +13,21 @@ services:
     volumes:
       - ./postgres-data:/var/lib/postgresql/data
     healthcheck:
-      test: pg-isready
+      test: ["CMD-SHELL", "sh -c 'pg_isready -U ${POSTGRES_USER}'"]
       interval: 5s
       timeout: 30s
       retries: 5
+  
+  aggregatron-api-server:
+    build: 
+      context: .
+      dockerfile: Dockerfile
+    restart: unless-stopped
+    ports:
+      - 3000:3000
+    environment:
+      - POSTGRES_USER=${POSTGRES_USER}
+      - POSTGRES_PASSWORD=${POSTGRES_PASSWORD}
+    depends_on:
+      aggregatron-db:
+        condition: service_healthy
