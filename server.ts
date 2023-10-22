@@ -1,15 +1,13 @@
 import express from "express"
-import { connect } from "./src/database/connect"
+import { selectAllFromActivities } from "./src/database/queries"
 
 const app = express()
 const port = 3000
 
 
-app.get("/", (req, res) => {
-  // Connect to DB
-  connect((data:string):void => {
-    res.send(data)
-  })
+app.get("/", async (req, res) => {
+  const data = await selectAllFromActivities()
+  res.send("Data: " + JSON.stringify(data))
 })
 
 app.listen(port, () => {
