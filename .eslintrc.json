@@ -13,8 +13,11 @@
     "semi": ["error", "never"],    // Never use semicolons
     "object-curly-spacing": ["error", "always"], // Require spaces in object brackets
     "array-bracket-spacing": ["error", "always"], // Require spaces in array brackets
-    "space-in-parens": ["error", "allow"], // Require spaces in parentheses
     "comma-dangle": ["error", "never"],
+    "space-in-parens": ["error", "never"], // Require spaces in parentheses
+    "indent": ["error", 2],
+    "@typescript-eslint/explicit-function-return-type": "error",
+    "@typescript-eslint/explicit-module-boundary-types": "error",
     "no-console": "warn"
   }
 }

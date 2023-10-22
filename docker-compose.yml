@@ -22,6 +22,7 @@ services:
     build: 
       context: .
       dockerfile: Dockerfile
+    container_name: aggregatron-api-server
     restart: unless-stopped
     ports:
       - 3000:3000
