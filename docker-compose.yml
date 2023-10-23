@@ -29,6 +29,7 @@ services:
     environment:
       - POSTGRES_USER=${POSTGRES_USER}
       - POSTGRES_PASSWORD=${POSTGRES_PASSWORD}
+      - ALLOWED_ORIGINS=${ALLOWED_ORIGINS}
     depends_on:
       aggregatron-db:
         condition: service_healthy
