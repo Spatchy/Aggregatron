@@ -9,5 +9,6 @@ CREATE TABLE Activities (
     service varchar REFERENCES Services(service),
     published_date timestamp,
     title varchar,
-    url varchar
+    url varchar,
+    thumbnail bytea
 );
